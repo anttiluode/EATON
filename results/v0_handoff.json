@@ -1,0 +1,3640 @@
+{
+  "claim_boundary": "Synthetic existence proof only: v0 can establish operator lifetime as a computational variable in this matched resident-state machine. It does not establish a biological mechanism, general superiority of phasic control, or equivalence to transformer attention.",
+  "classification": "PASS_TRANSIENT_HANDOFF",
+  "config": {
+    "acquire_gain": 1.0,
+    "episodes_per_seed": 256,
+    "event_noise_sigma": 0.08,
+    "init_sigma": 0.05,
+    "memory_self": 0.4,
+    "output_gain": 2.0,
+    "repetitions_per_pair": 64,
+    "retention": 0.98,
+    "seed_count": 64,
+    "state_bound": 1.000000000001
+  },
+  "experiment": "EATON v0 transient operator handoff",
+  "frozen_parameters": {
+    "acquire_gain": 1.0,
+    "episodes_per_seed": 256,
+    "event_noise_sigma": 0.08,
+    "init_sigma": 0.05,
+    "memory_self": 0.4,
+    "output_gain": 2.0,
+    "repetitions_per_pair": 64,
+    "retention": 0.98,
+    "seed_count": 64,
+    "state_bound": 1.000000000001
+  },
+  "seed_results": [
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 510.5924222766311,
+          "event_count": 512,
+          "final_accuracy": 0.4921875,
+          "handoff_memory_correlation": -0.04362498900150931,
+          "max_abs_state": 0.844705182682873,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 510.5924222766311,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.17184004018987584,
+          "max_abs_state": 0.9058188344235374,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 510.5924222766311,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9988415152501021,
+          "max_abs_state": 0.8611853526866073,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 126,
+          "both_wrong": 0,
+          "transient_only_correct": 130
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 0
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.0037835310178,
+          "event_count": 512,
+          "final_accuracy": 0.51953125,
+          "handoff_memory_correlation": 0.06512672306214824,
+          "max_abs_state": 0.8556285221099151,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.0037835310178,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.17376050365168616,
+          "max_abs_state": 0.9092453814062277,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.0037835310178,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9989086113983895,
+          "max_abs_state": 0.8766607853021348,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 133,
+          "both_wrong": 0,
+          "transient_only_correct": 123
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 1
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 508.60358071683936,
+          "event_count": 512,
+          "final_accuracy": 0.5390625,
+          "handoff_memory_correlation": 0.0035247071308986255,
+          "max_abs_state": 0.8442693037687891,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 508.60358071683936,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.17295691950923736,
+          "max_abs_state": 0.8990503687151616,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 508.60358071683936,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9987222339910072,
+          "max_abs_state": 0.8756995037554504,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 138,
+          "both_wrong": 0,
+          "transient_only_correct": 118
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 2
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 510.5977937476766,
+          "event_count": 512,
+          "final_accuracy": 0.47265625,
+          "handoff_memory_correlation": -0.003935976685268064,
+          "max_abs_state": 0.8396280222215625,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 510.5977937476766,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.1835082568533517,
+          "max_abs_state": 0.9084608740053361,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 510.5977937476766,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9989033131585205,
+          "max_abs_state": 0.8634579497203926,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 121,
+          "both_wrong": 0,
+          "transient_only_correct": 135
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 3
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.748440305261,
+          "event_count": 512,
+          "final_accuracy": 0.5546875,
+          "handoff_memory_correlation": 0.10338937510032212,
+          "max_abs_state": 0.8409316559555087,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.748440305261,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.17621872749151907,
+          "max_abs_state": 0.9054999793457675,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.748440305261,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9988977577259976,
+          "max_abs_state": 0.864808698204516,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 142,
+          "both_wrong": 0,
+          "transient_only_correct": 114
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 4
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 514.3067942588851,
+          "event_count": 512,
+          "final_accuracy": 0.50390625,
+          "handoff_memory_correlation": -0.04953456714761175,
+          "max_abs_state": 0.850151814786472,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 514.3067942588851,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.175213266958419,
+          "max_abs_state": 0.9055039830107134,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 514.3067942588851,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9989669872678866,
+          "max_abs_state": 0.8665038858662698,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 129,
+          "both_wrong": 0,
+          "transient_only_correct": 127
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 5
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 510.72772256760135,
+          "event_count": 512,
+          "final_accuracy": 0.515625,
+          "handoff_memory_correlation": 0.03375567091518756,
+          "max_abs_state": 0.8466147655371046,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 510.72772256760135,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.1779993470559508,
+          "max_abs_state": 0.9014601600180433,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 510.72772256760135,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9990812045702135,
+          "max_abs_state": 0.8657330918022003,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 132,
+          "both_wrong": 0,
+          "transient_only_correct": 124
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 6
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 510.58699729134514,
+          "event_count": 512,
+          "final_accuracy": 0.421875,
+          "handoff_memory_correlation": -0.07778518706227303,
+          "max_abs_state": 0.8483630162899652,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 510.58699729134514,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.16904410396859593,
+          "max_abs_state": 0.9073193590081053,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 510.58699729134514,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9988585955589695,
+          "max_abs_state": 0.8765227884104932,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 108,
+          "both_wrong": 0,
+          "transient_only_correct": 148
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 7
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 513.787144334299,
+          "event_count": 512,
+          "final_accuracy": 0.46484375,
+          "handoff_memory_correlation": -0.041109765154126385,
+          "max_abs_state": 0.8490320359688943,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 513.787144334299,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.1745025204805126,
+          "max_abs_state": 0.9096737793963829,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 513.787144334299,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9989343230201424,
+          "max_abs_state": 0.8724015266336693,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 119,
+          "both_wrong": 0,
+          "transient_only_correct": 137
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 8
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.2841247754621,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": -0.009317763795709585,
+          "max_abs_state": 0.8528091645868523,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.2841247754621,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.17364509988559385,
+          "max_abs_state": 0.8995672650045747,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.2841247754621,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9990268027145042,
+          "max_abs_state": 0.8746908612646851,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 9
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.1802620091936,
+          "event_count": 512,
+          "final_accuracy": 0.421875,
+          "handoff_memory_correlation": -0.19732901547532225,
+          "max_abs_state": 0.8550040807431586,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.1802620091936,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.17334049707573887,
+          "max_abs_state": 0.9036150969635199,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.1802620091936,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.998990270516502,
+          "max_abs_state": 0.8650671358220601,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 108,
+          "both_wrong": 0,
+          "transient_only_correct": 148
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 10
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 513.4832599452849,
+          "event_count": 512,
+          "final_accuracy": 0.55859375,
+          "handoff_memory_correlation": 0.09926984968857346,
+          "max_abs_state": 0.8590965252842789,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 513.4832599452849,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.17418545758539072,
+          "max_abs_state": 0.9215206003251145,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 513.4832599452849,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9988432602541172,
+          "max_abs_state": 0.871465030397739,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 143,
+          "both_wrong": 0,
+          "transient_only_correct": 113
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 11
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 509.6015789675435,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.017653445493940812,
+          "max_abs_state": 0.8390182036365258,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 509.6015789675435,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.17981239805320126,
+          "max_abs_state": 0.9070015500313469,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 509.6015789675435,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9989507097825352,
+          "max_abs_state": 0.862087907990879,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 12
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 510.61362609815757,
+          "event_count": 512,
+          "final_accuracy": 0.4140625,
+          "handoff_memory_correlation": -0.1981354790190445,
+          "max_abs_state": 0.8365014065533715,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 510.61362609815757,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.17364195895979465,
+          "max_abs_state": 0.9086218396641308,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 510.61362609815757,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9988889222876799,
+          "max_abs_state": 0.855450390168788,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 106,
+          "both_wrong": 0,
+          "transient_only_correct": 150
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 13
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 510.29287917618984,
+          "event_count": 512,
+          "final_accuracy": 0.50390625,
+          "handoff_memory_correlation": 0.030074789365666002,
+          "max_abs_state": 0.8433633827537986,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 510.29287917618984,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.1753324430826435,
+          "max_abs_state": 0.9116488359797162,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 510.29287917618984,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.999043261929365,
+          "max_abs_state": 0.8616172693398907,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 129,
+          "both_wrong": 0,
+          "transient_only_correct": 127
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 14
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 515.4435044848649,
+          "event_count": 512,
+          "final_accuracy": 0.484375,
+          "handoff_memory_correlation": -0.009785908481800928,
+          "max_abs_state": 0.85467432235332,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 515.4435044848649,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.17218054940369834,
+          "max_abs_state": 0.9131358042810197,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 515.4435044848649,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9989244103287324,
+          "max_abs_state": 0.8594878404332528,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 124,
+          "both_wrong": 0,
+          "transient_only_correct": 132
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 15
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 513.4071540566605,
+          "event_count": 512,
+          "final_accuracy": 0.47265625,
+          "handoff_memory_correlation": -0.08195318275661763,
+          "max_abs_state": 0.8487654229425268,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 513.4071540566605,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.17536399664796767,
+          "max_abs_state": 0.9133902741887722,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 513.4071540566605,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9988996448801194,
+          "max_abs_state": 0.8652687234291795,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 121,
+          "both_wrong": 0,
+          "transient_only_correct": 135
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 16
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.0784888426147,
+          "event_count": 512,
+          "final_accuracy": 0.5390625,
+          "handoff_memory_correlation": 0.02330076305599127,
+          "max_abs_state": 0.8400424308941805,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.0784888426147,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.1792612759806071,
+          "max_abs_state": 0.9070876894100539,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.0784888426147,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.998802926482704,
+          "max_abs_state": 0.8777516772400172,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 138,
+          "both_wrong": 0,
+          "transient_only_correct": 118
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 17
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 510.7097122659663,
+          "event_count": 512,
+          "final_accuracy": 0.5390625,
+          "handoff_memory_correlation": 0.07502161041921501,
+          "max_abs_state": 0.8488751070781073,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 510.7097122659663,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.17853695026363275,
+          "max_abs_state": 0.9069726802691273,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 510.7097122659663,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9988953510180709,
+          "max_abs_state": 0.8662600194927839,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 138,
+          "both_wrong": 0,
+          "transient_only_correct": 118
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 18
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 508.7237835115245,
+          "event_count": 512,
+          "final_accuracy": 0.51171875,
+          "handoff_memory_correlation": 0.025922932080983323,
+          "max_abs_state": 0.8383178240101148,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 508.7237835115245,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.17661246039582393,
+          "max_abs_state": 0.905944824312366,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 508.7237835115245,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9989140762292147,
+          "max_abs_state": 0.8653068578171589,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 131,
+          "both_wrong": 0,
+          "transient_only_correct": 125
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 19
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.3767867110505,
+          "event_count": 512,
+          "final_accuracy": 0.47265625,
+          "handoff_memory_correlation": -0.06834774873747232,
+          "max_abs_state": 0.8500366634207837,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.3767867110505,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.175486839487321,
+          "max_abs_state": 0.9105366809514158,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.3767867110505,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9989208058784176,
+          "max_abs_state": 0.8669239816034987,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 121,
+          "both_wrong": 0,
+          "transient_only_correct": 135
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 20
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 512.1257140144751,
+          "event_count": 512,
+          "final_accuracy": 0.50390625,
+          "handoff_memory_correlation": 0.08523840604644942,
+          "max_abs_state": 0.8429149455101739,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 512.1257140144751,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.17385250004928043,
+          "max_abs_state": 0.9046870797785668,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 512.1257140144751,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9990284982513269,
+          "max_abs_state": 0.8608107795246419,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 129,
+          "both_wrong": 0,
+          "transient_only_correct": 127
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 21
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.6619208724853,
+          "event_count": 512,
+          "final_accuracy": 0.54296875,
+          "handoff_memory_correlation": 0.0746376339524235,
+          "max_abs_state": 0.8370941273211656,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.6619208724853,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.1816565520520314,
+          "max_abs_state": 0.9043615803896797,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.6619208724853,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9989219856243297,
+          "max_abs_state": 0.859672675326065,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 139,
+          "both_wrong": 0,
+          "transient_only_correct": 117
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 22
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 510.5484215891566,
+          "event_count": 512,
+          "final_accuracy": 0.46875,
+          "handoff_memory_correlation": -0.08802652000513653,
+          "max_abs_state": 0.850148272707697,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 510.5484215891566,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.17581589823757338,
+          "max_abs_state": 0.9005046392636928,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 510.5484215891566,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9990170296662809,
+          "max_abs_state": 0.8642298716728195,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 120,
+          "both_wrong": 0,
+          "transient_only_correct": 136
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 23
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.91569914397104,
+          "event_count": 512,
+          "final_accuracy": 0.48046875,
+          "handoff_memory_correlation": 0.04170431621891852,
+          "max_abs_state": 0.8416070981261358,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.91569914397104,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.17764186233589144,
+          "max_abs_state": 0.9107840063007845,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.91569914397104,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9989704935287889,
+          "max_abs_state": 0.8722017021904753,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 123,
+          "both_wrong": 0,
+          "transient_only_correct": 133
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 24
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 510.5311527933621,
+          "event_count": 512,
+          "final_accuracy": 0.5234375,
+          "handoff_memory_correlation": 0.05706622758068242,
+          "max_abs_state": 0.8361541436634641,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 510.5311527933621,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.17510692544465437,
+          "max_abs_state": 0.9065249218923288,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 510.5311527933621,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9989838369038857,
+          "max_abs_state": 0.8596868422991188,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 134,
+          "both_wrong": 0,
+          "transient_only_correct": 122
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 25
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 514.6227153527888,
+          "event_count": 512,
+          "final_accuracy": 0.51171875,
+          "handoff_memory_correlation": -0.01099977710420127,
+          "max_abs_state": 0.8513797661858912,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 514.6227153527888,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.17226527253656868,
+          "max_abs_state": 0.9034066398103155,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 514.6227153527888,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9988503443166104,
+          "max_abs_state": 0.870494701680352,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 131,
+          "both_wrong": 0,
+          "transient_only_correct": 125
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 26
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 512.995644304992,
+          "event_count": 512,
+          "final_accuracy": 0.484375,
+          "handoff_memory_correlation": 0.0019570615060295286,
+          "max_abs_state": 0.8543712188977202,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 512.995644304992,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.17828507795779883,
+          "max_abs_state": 0.9067059035583759,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 512.995644304992,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9988156438794826,
+          "max_abs_state": 0.8720839935160225,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 124,
+          "both_wrong": 0,
+          "transient_only_correct": 132
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 27
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.4756679877478,
+          "event_count": 512,
+          "final_accuracy": 0.45703125,
+          "handoff_memory_correlation": -0.05219184200771264,
+          "max_abs_state": 0.8398739229905589,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.4756679877478,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.17848272620704259,
+          "max_abs_state": 0.9101059103787547,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.4756679877478,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9989471571589689,
+          "max_abs_state": 0.8750067052674481,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 117,
+          "both_wrong": 0,
+          "transient_only_correct": 139
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 28
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 513.6748110797639,
+          "event_count": 512,
+          "final_accuracy": 0.49609375,
+          "handoff_memory_correlation": -0.003052933676509228,
+          "max_abs_state": 0.8565640157184676,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 513.6748110797639,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.1689585918116888,
+          "max_abs_state": 0.9179273010643267,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 513.6748110797639,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9989110045355286,
+          "max_abs_state": 0.8643841266182416,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 127,
+          "both_wrong": 0,
+          "transient_only_correct": 129
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 29
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 513.8674056125026,
+          "event_count": 512,
+          "final_accuracy": 0.4609375,
+          "handoff_memory_correlation": -0.09876029537051252,
+          "max_abs_state": 0.8467881107880744,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 513.8674056125026,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.1762205043000395,
+          "max_abs_state": 0.8986947893079028,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 513.8674056125026,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.999050092420316,
+          "max_abs_state": 0.8743234101483037,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 118,
+          "both_wrong": 0,
+          "transient_only_correct": 138
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 30
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 514.6274942267389,
+          "event_count": 512,
+          "final_accuracy": 0.50390625,
+          "handoff_memory_correlation": 0.04715207890420032,
+          "max_abs_state": 0.8463129798786039,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 514.6274942267389,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.17840268564654294,
+          "max_abs_state": 0.9034288168946949,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 514.6274942267389,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9988630851626046,
+          "max_abs_state": 0.868822680570091,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 129,
+          "both_wrong": 0,
+          "transient_only_correct": 127
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 31
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 510.12522095155504,
+          "event_count": 512,
+          "final_accuracy": 0.44921875,
+          "handoff_memory_correlation": -0.09937913332109415,
+          "max_abs_state": 0.8460863096177128,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 510.12522095155504,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.18229339364387132,
+          "max_abs_state": 0.9163180718856241,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 510.12522095155504,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.99893935237779,
+          "max_abs_state": 0.8724061158316384,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 115,
+          "both_wrong": 0,
+          "transient_only_correct": 141
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 32
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.81623111813053,
+          "event_count": 512,
+          "final_accuracy": 0.4609375,
+          "handoff_memory_correlation": -0.061292564338669774,
+          "max_abs_state": 0.8499205428529137,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.81623111813053,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.17265244350837958,
+          "max_abs_state": 0.9069126043713304,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.81623111813053,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9989421956849005,
+          "max_abs_state": 0.881990170704097,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 118,
+          "both_wrong": 0,
+          "transient_only_correct": 138
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 33
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 512.5660557799595,
+          "event_count": 512,
+          "final_accuracy": 0.4921875,
+          "handoff_memory_correlation": 0.005453019783467899,
+          "max_abs_state": 0.8441113958701348,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 512.5660557799595,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.17828593098894016,
+          "max_abs_state": 0.9116194043526972,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 512.5660557799595,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9989071206094614,
+          "max_abs_state": 0.866332006516578,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 126,
+          "both_wrong": 0,
+          "transient_only_correct": 130
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 34
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 514.5899116825804,
+          "event_count": 512,
+          "final_accuracy": 0.51953125,
+          "handoff_memory_correlation": 0.05105376177749204,
+          "max_abs_state": 0.8386285082529372,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 514.5899116825804,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.17213258052789468,
+          "max_abs_state": 0.9118464475925689,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 514.5899116825804,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9990725051027702,
+          "max_abs_state": 0.8726837680551232,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 133,
+          "both_wrong": 0,
+          "transient_only_correct": 123
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 35
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 513.5769270965202,
+          "event_count": 512,
+          "final_accuracy": 0.5546875,
+          "handoff_memory_correlation": 0.09363442298662113,
+          "max_abs_state": 0.8433605553201369,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 513.5769270965202,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.17819125017045334,
+          "max_abs_state": 0.9041117705185894,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 513.5769270965202,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9989467110739452,
+          "max_abs_state": 0.8578891452873934,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 142,
+          "both_wrong": 0,
+          "transient_only_correct": 114
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 36
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.12197219674067,
+          "event_count": 512,
+          "final_accuracy": 0.45703125,
+          "handoff_memory_correlation": -0.0703141331217076,
+          "max_abs_state": 0.8441641996212191,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.12197219674067,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.18086363893541066,
+          "max_abs_state": 0.9068329699300408,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.12197219674067,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9989768721336729,
+          "max_abs_state": 0.8613430521434411,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 117,
+          "both_wrong": 0,
+          "transient_only_correct": 139
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 37
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 515.9209355008614,
+          "event_count": 512,
+          "final_accuracy": 0.49609375,
+          "handoff_memory_correlation": 0.04042811728538633,
+          "max_abs_state": 0.8530244120465064,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 515.9209355008614,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.17352690394674627,
+          "max_abs_state": 0.9102472910498612,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 515.9209355008614,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9989525133379554,
+          "max_abs_state": 0.8665795579223654,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 127,
+          "both_wrong": 0,
+          "transient_only_correct": 129
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 38
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 512.0709220758489,
+          "event_count": 512,
+          "final_accuracy": 0.44140625,
+          "handoff_memory_correlation": -0.070528376946056,
+          "max_abs_state": 0.8540723068044226,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 512.0709220758489,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.17213806351509509,
+          "max_abs_state": 0.9095656463033807,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 512.0709220758489,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9988062514108823,
+          "max_abs_state": 0.8640350292553239,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 113,
+          "both_wrong": 0,
+          "transient_only_correct": 143
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 39
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 512.1817392749404,
+          "event_count": 512,
+          "final_accuracy": 0.48046875,
+          "handoff_memory_correlation": -0.06511154505487184,
+          "max_abs_state": 0.8350188293839567,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 512.1817392749404,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.17616008644144918,
+          "max_abs_state": 0.9069053422104478,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 512.1817392749404,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9989137905281137,
+          "max_abs_state": 0.8652038067514857,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 123,
+          "both_wrong": 0,
+          "transient_only_correct": 133
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 40
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.6475093574058,
+          "event_count": 512,
+          "final_accuracy": 0.515625,
+          "handoff_memory_correlation": -0.046407236132109356,
+          "max_abs_state": 0.8511678634643993,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.6475093574058,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.1762288493947648,
+          "max_abs_state": 0.9141226282983209,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.6475093574058,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.99885703341549,
+          "max_abs_state": 0.8716284687106207,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 132,
+          "both_wrong": 0,
+          "transient_only_correct": 124
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 41
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.3502895090253,
+          "event_count": 512,
+          "final_accuracy": 0.51953125,
+          "handoff_memory_correlation": 0.015976289851817222,
+          "max_abs_state": 0.8535694913797136,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.3502895090253,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.17616879542849972,
+          "max_abs_state": 0.9074480781885538,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.3502895090253,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9989133629537207,
+          "max_abs_state": 0.8714565915381591,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 133,
+          "both_wrong": 0,
+          "transient_only_correct": 123
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 42
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.6720036046589,
+          "event_count": 512,
+          "final_accuracy": 0.52734375,
+          "handoff_memory_correlation": 0.10709134254715662,
+          "max_abs_state": 0.8377636933245928,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.6720036046589,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.17285869680594204,
+          "max_abs_state": 0.9017730893133667,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.6720036046589,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9989396244195061,
+          "max_abs_state": 0.8693720977630627,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 135,
+          "both_wrong": 0,
+          "transient_only_correct": 121
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 43
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 512.366363012739,
+          "event_count": 512,
+          "final_accuracy": 0.4765625,
+          "handoff_memory_correlation": -0.021821656722402483,
+          "max_abs_state": 0.8497474884839791,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 512.366363012739,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.17698965785004606,
+          "max_abs_state": 0.9136919532302615,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 512.366363012739,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.999181957834923,
+          "max_abs_state": 0.858245436979997,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 122,
+          "both_wrong": 0,
+          "transient_only_correct": 134
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 44
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 515.3647357389652,
+          "event_count": 512,
+          "final_accuracy": 0.44140625,
+          "handoff_memory_correlation": -0.06286719577066106,
+          "max_abs_state": 0.8443848564862293,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 515.3647357389652,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.1670208343716804,
+          "max_abs_state": 0.9103261315036194,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 515.3647357389652,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9990255512103171,
+          "max_abs_state": 0.8600442302783756,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 113,
+          "both_wrong": 0,
+          "transient_only_correct": 143
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 45
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 512.0527610567797,
+          "event_count": 512,
+          "final_accuracy": 0.48046875,
+          "handoff_memory_correlation": -0.06520573266665086,
+          "max_abs_state": 0.8429901608056978,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 512.0527610567797,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.17558090277318775,
+          "max_abs_state": 0.911024575490334,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 512.0527610567797,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9990259895441336,
+          "max_abs_state": 0.8673517509570254,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 123,
+          "both_wrong": 0,
+          "transient_only_correct": 133
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 46
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.1077594831679,
+          "event_count": 512,
+          "final_accuracy": 0.51171875,
+          "handoff_memory_correlation": 0.039743237055467305,
+          "max_abs_state": 0.8588345864155017,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.1077594831679,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.17390985941766568,
+          "max_abs_state": 0.9062975562010716,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.1077594831679,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9989651117341751,
+          "max_abs_state": 0.8786860110736627,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 131,
+          "both_wrong": 0,
+          "transient_only_correct": 125
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 47
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 512.1791384552101,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.05284422799145267,
+          "max_abs_state": 0.8510006212033897,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 512.1791384552101,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.1775511836804458,
+          "max_abs_state": 0.915401705871002,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 512.1791384552101,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.999072708969509,
+          "max_abs_state": 0.8677024865644136,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 48
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 512.422242817325,
+          "event_count": 512,
+          "final_accuracy": 0.49609375,
+          "handoff_memory_correlation": -0.039043077411757186,
+          "max_abs_state": 0.8504374261831896,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 512.422242817325,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.17727739347440935,
+          "max_abs_state": 0.9169069930186441,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 512.422242817325,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9989735842013688,
+          "max_abs_state": 0.8612485613476524,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 127,
+          "both_wrong": 0,
+          "transient_only_correct": 129
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 49
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 512.9857356060681,
+          "event_count": 512,
+          "final_accuracy": 0.51171875,
+          "handoff_memory_correlation": 0.09061669373258609,
+          "max_abs_state": 0.8581075895380196,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 512.9857356060681,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.17262273077201343,
+          "max_abs_state": 0.9063178566560864,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 512.9857356060681,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.999030292251434,
+          "max_abs_state": 0.8685296860335038,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 131,
+          "both_wrong": 0,
+          "transient_only_correct": 125
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 50
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 513.5622057633252,
+          "event_count": 512,
+          "final_accuracy": 0.546875,
+          "handoff_memory_correlation": 0.05593671287517018,
+          "max_abs_state": 0.8569526839910574,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 513.5622057633252,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.17823391647778467,
+          "max_abs_state": 0.9050206781424844,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 513.5622057633252,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9990673296759434,
+          "max_abs_state": 0.8685515086306153,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 140,
+          "both_wrong": 0,
+          "transient_only_correct": 116
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 51
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.923060087083,
+          "event_count": 512,
+          "final_accuracy": 0.53125,
+          "handoff_memory_correlation": 0.03270268665281984,
+          "max_abs_state": 0.8514129969832954,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.923060087083,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.17129611400485664,
+          "max_abs_state": 0.9032898163586504,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.923060087083,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9989441124137804,
+          "max_abs_state": 0.8647176044021985,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 136,
+          "both_wrong": 0,
+          "transient_only_correct": 120
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 52
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 510.4723406282368,
+          "event_count": 512,
+          "final_accuracy": 0.46875,
+          "handoff_memory_correlation": -0.022941828627298044,
+          "max_abs_state": 0.8549520272413648,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 510.4723406282368,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.17695477989169917,
+          "max_abs_state": 0.9075969438435617,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 510.4723406282368,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9988404701254736,
+          "max_abs_state": 0.8790078652896713,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 120,
+          "both_wrong": 0,
+          "transient_only_correct": 136
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 53
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 512.5346100220672,
+          "event_count": 512,
+          "final_accuracy": 0.53125,
+          "handoff_memory_correlation": 0.0625322998720696,
+          "max_abs_state": 0.8471808527774618,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 512.5346100220672,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.17589544382301475,
+          "max_abs_state": 0.9121792173506968,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 512.5346100220672,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9990407387204616,
+          "max_abs_state": 0.8721656446442744,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 136,
+          "both_wrong": 0,
+          "transient_only_correct": 120
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 54
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 512.905905088103,
+          "event_count": 512,
+          "final_accuracy": 0.46875,
+          "handoff_memory_correlation": 5.796406059403443e-05,
+          "max_abs_state": 0.846382423954875,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 512.905905088103,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.17904205278791516,
+          "max_abs_state": 0.9124434195297983,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 512.905905088103,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9989798793258191,
+          "max_abs_state": 0.8695279060405704,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 120,
+          "both_wrong": 0,
+          "transient_only_correct": 136
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 55
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 509.54729132917714,
+          "event_count": 512,
+          "final_accuracy": 0.5625,
+          "handoff_memory_correlation": 0.09752679832080025,
+          "max_abs_state": 0.8452897723655568,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 509.54729132917714,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.17967466705189095,
+          "max_abs_state": 0.9064137340224439,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 509.54729132917714,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9988846756185017,
+          "max_abs_state": 0.8655599107931873,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 144,
+          "both_wrong": 0,
+          "transient_only_correct": 112
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 56
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 515.3165810818664,
+          "event_count": 512,
+          "final_accuracy": 0.484375,
+          "handoff_memory_correlation": -0.010777083082334014,
+          "max_abs_state": 0.8460828083826942,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 515.3165810818664,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.17635589191206422,
+          "max_abs_state": 0.9056251206888284,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 515.3165810818664,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9989938400873711,
+          "max_abs_state": 0.8674962594874628,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 124,
+          "both_wrong": 0,
+          "transient_only_correct": 132
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 57
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 512.9699158650424,
+          "event_count": 512,
+          "final_accuracy": 0.50390625,
+          "handoff_memory_correlation": 0.053980093443900624,
+          "max_abs_state": 0.8522508066171657,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 512.9699158650424,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.17388850544381199,
+          "max_abs_state": 0.9206235357712115,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 512.9699158650424,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9987232260648049,
+          "max_abs_state": 0.8793741609706045,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 129,
+          "both_wrong": 0,
+          "transient_only_correct": 127
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 58
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.85751416363144,
+          "event_count": 512,
+          "final_accuracy": 0.546875,
+          "handoff_memory_correlation": 0.11318777710799237,
+          "max_abs_state": 0.8394402758893716,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.85751416363144,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.1754498428430527,
+          "max_abs_state": 0.8996068405890646,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.85751416363144,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9989046924552093,
+          "max_abs_state": 0.8669985554853659,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 140,
+          "both_wrong": 0,
+          "transient_only_correct": 116
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 59
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 508.4263828842095,
+          "event_count": 512,
+          "final_accuracy": 0.52734375,
+          "handoff_memory_correlation": 0.03856031449738489,
+          "max_abs_state": 0.8400677821238816,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 508.4263828842095,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.18136704850170654,
+          "max_abs_state": 0.9065282478062576,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 508.4263828842095,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9989788027223352,
+          "max_abs_state": 0.8607918286441363,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 135,
+          "both_wrong": 0,
+          "transient_only_correct": 121
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 60
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.0430058275848,
+          "event_count": 512,
+          "final_accuracy": 0.51953125,
+          "handoff_memory_correlation": 0.010078817714610689,
+          "max_abs_state": 0.8420034241283644,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.0430058275848,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.1744186676936034,
+          "max_abs_state": 0.9078888269328403,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 511.0430058275848,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9989201307413094,
+          "max_abs_state": 0.8673457221733974,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 133,
+          "both_wrong": 0,
+          "transient_only_correct": 123
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 61
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 512.4091823118728,
+          "event_count": 512,
+          "final_accuracy": 0.52734375,
+          "handoff_memory_correlation": 0.04978690161689176,
+          "max_abs_state": 0.8430746137507019,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 512.4091823118728,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.18452153762616336,
+          "max_abs_state": 0.9126358390821244,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 512.4091823118728,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9991328048898689,
+          "max_abs_state": 0.8581476454911875,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 135,
+          "both_wrong": 0,
+          "transient_only_correct": 121
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 62
+    },
+    {
+      "arms": {
+        "reset": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 509.28877474847224,
+          "event_count": 512,
+          "final_accuracy": 0.50390625,
+          "handoff_memory_correlation": 0.042347651048832584,
+          "max_abs_state": 0.8436199779835083,
+          "operator_overlap_event_ticks": 0
+        },
+        "tonic": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 509.28877474847224,
+          "event_count": 512,
+          "final_accuracy": 0.5,
+          "handoff_memory_correlation": 0.17129359212047418,
+          "max_abs_state": 0.9011083589200993,
+          "operator_overlap_event_ticks": 256
+        },
+        "transient": {
+          "early_accuracy": 1.0,
+          "event_abs_sum": 509.28877474847224,
+          "event_count": 512,
+          "final_accuracy": 1.0,
+          "handoff_memory_correlation": 0.9989183766254067,
+          "max_abs_state": 0.8761003362356189,
+          "operator_overlap_event_ticks": 0
+        }
+      },
+      "matched_invariants": {
+        "event_amplitude_sums_equal": true,
+        "event_counts_equal": true,
+        "stage1_transient_reset_equal": true,
+        "stage1_transient_tonic_equal": true
+      },
+      "numerical_checks": {
+        "all_bounded": true,
+        "all_finite": true
+      },
+      "paired_episode_disagreements": {
+        "transient_vs_reset": {
+          "attacker_only_correct": 0,
+          "both_correct": 129,
+          "both_wrong": 0,
+          "transient_only_correct": 127
+        },
+        "transient_vs_tonic": {
+          "attacker_only_correct": 0,
+          "both_correct": 128,
+          "both_wrong": 0,
+          "transient_only_correct": 128
+        }
+      },
+      "seed": 63
+    }
+  ],
+  "summary": {
+    "all_finite": true,
+    "classification": "PASS_TRANSIENT_HANDOFF",
+    "matched_invariants_valid": true,
+    "max_abs_state": 0.9215206003251145,
+    "median_early_accuracy": {
+      "reset": 1.0,
+      "tonic": 1.0,
+      "transient": 1.0
+    },
+    "median_final_accuracy": {
+      "reset": 0.501953125,
+      "tonic": 0.5,
+      "transient": 1.0
+    },
+    "median_handoff_memory_correlation": {
+      "reset": 0.007765918749039294,
+      "tonic": 0.17569840050538055,
+      "transient": 0.998939488398648
+    },
+    "median_transient_minus_reset": 0.498046875,
+    "median_transient_minus_tonic": 0.5,
+    "transient_seed_wins_vs_reset": 64,
+    "transient_seed_wins_vs_tonic": 64
+  }
+}
