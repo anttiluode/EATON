@@ -5,6 +5,7 @@ from pathlib import Path
 from eaton.experiment import run_canonical
 
 RECEIPT = Path("results/v0_handoff.json")
+README = Path("README.md")
 
 
 def test_committed_receipt_matches_fresh_scientific_summary():
@@ -32,3 +33,16 @@ def test_committed_receipt_matches_fresh_scientific_summary():
             fs["median_handoff_memory_correlation"][arm],
             abs_tol=1e-12,
         )
+
+
+def test_readme_is_grounded_in_frozen_result_and_claim_boundary():
+    receipt = json.loads(RECEIPT.read_text(encoding="utf-8"))
+    text = README.read_text(encoding="utf-8")
+    assert "Event-Addressed Transient Operator Networks" in text
+    assert receipt["classification"] in text
+    assert "operator lifetime" in text.lower()
+    assert "synthetic" in text.lower()
+    assert "1.0000" in text
+    assert "0.5000" in text
+    assert "0.5020" in text
+    assert "64 / 64" in text
