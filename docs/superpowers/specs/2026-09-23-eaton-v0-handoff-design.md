@@ -49,15 +49,15 @@ The point is not that tonic control is always bad. The point is to construct the
 
 ## Minimal machine
 
-Each node owns a resident state. V0 uses one receiver because network topology is not the question yet.
+V0 uses one receiver because network topology is not the question yet.
 
-Use a four-coordinate latent state:
+Its resident state is
 
 ```text
 x = [memory, decision_trace, payload_trace, output]
 ```
 
-and one scalar event channel `u[t]`.
+and it receives one scalar event channel `u[t]`.
 
 Two event-addressable operators exist:
 
@@ -66,60 +66,123 @@ A = acquire / select
 B = use / transform
 ```
 
-They are ordinary deterministic state-update functions with bounded nonlinearities. The implementation may use `tanh` to keep state bounded, but the pass/fail claim must not depend on a delicate saturation constant.
+All coordinates start each episode from a matched nuisance state
+
+```text
+x0[j] ~ Normal(0, 0.05)
+```
+
+using the same sampled `x0` in all three arms.
+
+When a coordinate is not actively written by an operator it undergoes passive retention
+
+```text
+z <- 0.98 * z
+```
+
+except `decision_trace`, which is frozen after the stage-1 decision so the early readout is not changed by later decay.
+
+All explicit operator writes use `tanh`, making the state bounded.
 
 ### Operator A — acquire
 
-During the first stage, a context event `c ∈ {-1,+1}` arrives. While A is active it writes the sign of the event into resident memory and a decision trace.
-
-Conceptually:
+A is event-gated. If A is active and a nonzero event `u` arrives:
 
 ```text
-memory        <- retain(memory) + gain_A * u
+memory         <- tanh(0.40 * memory + 1.00 * u)
 decision_trace <- memory
 ```
 
-The early published decision is:
+If A is active but no event arrives, it performs no special write; ordinary passive retention applies. Thus merely leaving A switched on is not itself destructive. Tonic interference occurs only when a later event arrives while A is still eligible to interpret it.
+
+The early published decision is
 
 ```text
-d_early = sign(decision_trace)
+d_early = +1 if decision_trace >= 0 else -1
 ```
 
-All experimental arms must get this first-stage decision right. A result where the tonic attacker simply fails stage 1 is uninteresting.
+and is scored against context `c`.
+
+All experimental arms must be identical through this boundary.
 
 ### Operator B — use
 
-During the second stage, a payload event `p ∈ {-1,+1}` arrives on the **same event channel**. B combines the resident memory laid down by A with the new payload to compute a final answer:
+B has a two-tick episode so that simultaneous A/B activation on the payload tick has no ambiguous update ordering.
+
+On B's **payload tick**, B only stores the incoming event:
 
 ```text
-output <- combine(memory, payload)
+payload_trace <- tanh(u)
 ```
 
-The canonical v0 target is the parity-like relation
+It does not read `memory` yet.
+
+On the following **compute tick**, with no new event:
+
+```text
+output <- tanh(2.00 * memory * payload_trace)
+```
+
+The final published answer is
+
+```text
+y = +1 if output >= 0 else -1
+```
+
+and the target is
 
 ```text
 y_target = c * p
 ```
 
-so the second stage cannot be solved from the payload alone and cannot be solved from the stored context alone.
+so stage 2 requires both the earlier resident context and the new payload.
 
-The exact bounded implementation can be bilinear or an equivalent tiny nonlinear map. It must be identical across all arms.
+### Exact event schedule
+
+Each episode has three logical ticks:
+
+```text
+t0  context tick
+    event = c + eta_context
+    A active
+    B inactive
+    record early decision after A writes
+
+--- handoff boundary ---
+
+optional reset happens here in reset arm only
+
+t1  payload tick
+    event = p + eta_payload
+    B active: stores payload_trace
+    transient: A released, memory only passively retained
+    tonic:     A still active, so the same payload event also rewrites memory
+    reset:     A released, reset memory only passively retained
+
+t2  compute tick
+    event = 0
+    B active: computes output from current memory and payload_trace
+    A causes no event-gated write in any arm
+```
+
+On `t1`, A and B write different state coordinates. Therefore the result is independent of Python call order: tonic A writes `memory`, B writes `payload_trace`, and B does not consume `memory` until `t2`.
 
 ### Why tonic A should interfere
 
-A is an **acquisition operator** connected to the shared event channel. It is useful when `c` arrives. If A remains active when `p` arrives, it continues treating the new event as material to write into the same resident memory that B is trying to use.
-
-That is the v0 interference mechanism:
+A is an acquisition operator connected to the shared event channel. It is useful when `c` arrives. If it remains active when `p` arrives, it interprets the payload as new acquisition material:
 
 ```text
-phasic:
+transient:
     c --A--> memory
     release A
-    p --B(memory,p)--> answer
+    p --B--> payload_trace
+    B(memory, payload_trace) --> answer
 
  tonic:
     c --A--> memory
-    p --A+B--> memory is rewritten while B uses it
+    keep A eligible
+    p --A+B--> memory rewritten + payload stored
+    B(rewritten memory, payload_trace) --> answer
 ```
 
 This is deliberately synthetic and transparent. V0 is an existence proof for operator lifetime as a computational degree of freedom, not a claim that this exact interference is biologically natural.
@@ -130,87 +193,111 @@ Every episode uses the same context, payload, nuisance noise tape, operator para
 
 ### 1. `transient`
 
-A is active only for the acquisition window. It is explicitly released before the payload event. B is then active for the transform window.
+A is eligible only at `t0`. At `t1` it is released; resident memory is retained passively while B stores the payload. B uses that retained memory at `t2`.
 
 This is the EATON hypothesis arm.
 
 ### 2. `tonic`
 
-A is activated by the same first event and is **not released** before the payload event. B activates on schedule, so the second stage runs with A and B simultaneously expressed.
-
-No operator weights, gains, event counts, or state dimensions differ from `transient`. Only A's lifetime differs.
+A is eligible at both `t0` and `t1`. B activates on the same schedule as in `transient`. The only causal difference from `transient` is A's release time.
 
 This is the main attacker.
 
 ### 3. `reset`
 
-A runs exactly as in `transient`, and the same early decision is recorded. Before B receives the payload, the resident memory coordinates written by A are reset to their neutral state.
+A runs exactly as in `transient`, and the same early decision is recorded. At the handoff boundary, immediately after the early decision and before `t1`, only `memory` is reset to that episode's original nuisance value `x0[memory]`. A is then released. All other state and all later events match `transient`.
 
-This arm tests whether transient success actually depends on state surviving the handoff rather than on a hidden shortcut in B or the event tape.
+This arm tests whether transient success actually depends on resident context surviving the handoff.
 
-## World and nuisance variation
+## Frozen world and nuisance variation
 
-Use 64 deterministic seeds by default.
+Use exactly 64 deterministic seeds numbered `0..63`.
 
-For each seed, evaluate a balanced factorial tape over the four `(c,p)` pairs with repeated matched nuisance perturbations. Suggested canonical budget:
+For each seed evaluate exactly 256 episodes:
 
 ```text
-256 episodes / seed
-64 repetitions of each of the four (c,p) combinations
+64 repetitions of each balanced pair
+(c,p) in {(-1,-1), (-1,+1), (+1,-1), (+1,+1)}
 ```
 
-Small zero-mean noise may perturb event amplitude and resident initialization. The same sampled noise is replayed across all three arms. Noise exists to prevent a single exact algebraic equality from being the entire gate, not to make the task difficult.
+The four pair labels are shuffled once per seed and then replayed identically across arms.
 
-No parameter tuning is allowed after the canonical receipt is observed. If implementation reveals that a proposed parameter makes the gate mathematically degenerate before the frozen run, change it before freezing and document the reason.
+For each episode sample, once and replay across arms:
+
+```text
+x0[j]       ~ Normal(0, 0.05) for four state coordinates
+eta_context ~ Normal(0, 0.08)
+eta_payload ~ Normal(0, 0.08)
+```
+
+The delivered events are
+
+```text
+u_context = c + eta_context
+u_payload = p + eta_payload
+```
+
+No clipping is applied. Exact sign reversals from this noise scale are allowed to count as errors; they are part of the frozen nuisance distribution.
+
+These coefficients, seeds, episode counts, noise scales, retention, and gains are frozen by this design before the canonical receipt exists. They must not be retuned after seeing v0 results.
 
 ## Primary measurements
 
 For each arm and seed record:
 
-1. **early decision accuracy** — `sign(decision_trace)` versus `c` after stage 1;
-2. **final answer accuracy** — `sign(output)` versus `c*p` after stage 2;
-3. **handoff memory retention** — norm/correlation of the context-bearing resident component immediately before B acts;
-4. **operator overlap duration** — number of ticks for which A and B are simultaneously active;
-5. **event budget** — must match across arms;
-6. **state norm / boundedness** — detect trivial blow-up or saturation.
+1. **early decision accuracy** — `d_early` versus `c` after `t0`;
+2. **final answer accuracy** — `y` versus `c*p` after `t2`;
+3. **handoff memory retention** — signed correlation between `memory` immediately before B computes and the original `c`;
+4. **operator overlap duration** — number of event ticks on which A and B are simultaneously eligible;
+5. **event budget** — count and absolute-amplitude sum of externally delivered events;
+6. **state boundedness** — maximum absolute resident coordinate.
 
-Also record paired per-episode disagreements between `transient` and each attacker.
+Also record paired per-episode correctness differences between `transient` and each attacker.
 
 ## Frozen v0 gate
 
 Classify `PASS_TRANSIENT_HANDOFF` only if **all** of the following hold on the canonical 64-seed run:
 
 ```text
-median early decision accuracy, all arms       >= 0.95
+median early decision accuracy, every arm      >= 0.95
+stage-1 state/decision transient vs tonic       identical to atol 1e-12
+stage-1 state/decision transient vs reset       identical to atol 1e-12
 median final accuracy, transient               >= 0.90
 median transient - tonic final accuracy        >= 0.20
 median transient - reset final accuracy        >= 0.30
 transient paired wins vs tonic                  >= 48 / 64 seeds
 transient paired wins vs reset                  >= 56 / 64 seeds
-event budgets                                   exactly matched
-all state trajectories                          finite and bounded
+event counts and external amplitude sums        identical to atol 1e-12
+all state trajectories                          finite
+max absolute state coordinate                   <= 1.000000000001
 ```
 
-The reset arm is expected to approach chance (`~0.5`) on the balanced task, but no upper threshold is required for the scientific classification; the required transient-minus-reset margin is the actual test.
+A seed counts as a paired win when transient final accuracy is strictly greater than the attacker's final accuracy on that seed.
 
-If transient does not beat tonic, the result is `NO_HANDOFF_ADVANTAGE`.
+Classification precedence:
 
-If transient beats tonic but not reset, the result is `HANDOFF_WITHOUT_RESIDENT_MEMORY` and the intended EATON interpretation fails.
+1. If stage-1 equality or matched-event invariants fail: `INVALID_MATCHED_ARMS`.
+2. Else if transient does not clear the tonic margin/win thresholds: `NO_HANDOFF_ADVANTAGE`.
+3. Else if transient does not clear the reset margin/win thresholds: `HANDOFF_WITHOUT_RESIDENT_MEMORY`.
+4. Else if transient absolute accuracy/boundedness thresholds fail: `UNSTABLE_OR_WEAK_TRANSIENT`.
+5. Else: `PASS_TRANSIENT_HANDOFF`.
 
-If the early decision differs materially across arms, classify `INVALID_STAGE1_MATCH` rather than interpreting final accuracy.
+The reset arm is expected to approach chance on the balanced task, but no post-hoc reset ceiling is part of the pass rule.
 
 ## Destructive controls and invariants
 
-The implementation must test these mechanically before the scientific run:
+Mechanism tests must establish before interpreting the scientific receipt:
 
-- `transient` and `tonic` are identical through the end of stage 1;
-- all arms receive identical `(c,p)` and nuisance tapes;
-- `transient` and `tonic` differ only in A's release time;
-- `reset` differs from `transient` only by the explicit between-stage memory reset;
-- with A disabled entirely, early accuracy falls to chance;
-- with B disabled entirely, final parity accuracy falls to chance;
-- with memory artificially clamped to the correct context before B, B can solve the second stage;
-- event counts and event amplitudes are matched across arms.
+- `transient` and `tonic` are bitwise/effectively identical through the end of `t0`;
+- `reset` is also identical through the end of `t0`;
+- all arms receive identical `(c,p)`, `x0`, and nuisance tapes;
+- `transient` and `tonic` differ only in A eligibility at `t1`;
+- `reset` differs from `transient` only by the explicit handoff memory reset;
+- disabling A leaves the early decision dependent only on nuisance state and therefore at chance in aggregate;
+- disabling B leaves the final output dependent only on nuisance state and therefore at chance in aggregate;
+- clamping `memory` to the correct context sign before B's compute tick lets B solve the second stage;
+- external event counts and amplitudes are matched exactly across arms;
+- swapping Python execution order of A and B on `t1` leaves results unchanged because they write disjoint coordinates on that tick.
 
 These are engineering invariants, not positive scientific results.
 
@@ -222,10 +309,11 @@ Canonical result:
 results/v0_handoff.json
 ```
 
-It should contain:
+It must contain:
 
 ```text
 config
+frozen parameter block
 seed-level metrics
 aggregate medians
 paired-win counts
@@ -234,7 +322,7 @@ classification
 claim boundary
 ```
 
-The experiment runner must write a partial receipt before raising on a late failure when practical.
+The experiment runner should write a partial receipt before raising on a late failure when practical.
 
 ## Repository shape
 
@@ -246,7 +334,7 @@ pyproject.toml
 src/eaton/
     __init__.py
     core.py          # resident state, events, transient operators
-    world.py         # balanced two-stage tapes
+    world.py         # frozen balanced two-stage tapes
     experiment.py    # three matched arms + aggregation/classification
 experiments/
     run_v0.py
