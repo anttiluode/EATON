@@ -1,0 +1,36 @@
+name: Freeze first canonical receipt
+
+on:
+  push:
+    branches: [implement-v0-handoff]
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  freeze:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: implement-v0-handoff
+          fetch-depth: 0
+      - name: Download preregistered first canonical artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh run download 35817137760 -n eaton-v0-canonical -D /tmp/eaton-canonical
+      - name: Freeze exact receipt on branch
+        run: |
+          mkdir -p results
+          cp /tmp/eaton-canonical/v0_handoff.json results/v0_handoff.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/v0_handoff.json
+          if git diff --cached --quiet; then
+            echo "Canonical receipt already frozen."
+            exit 0
+          fi
+          git commit -m "experiment: freeze first EATON v0 handoff result"
+          git push origin HEAD:implement-v0-handoff
