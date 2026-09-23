@@ -6,6 +6,23 @@ on:
   pull_request:
 
 jobs:
+  canonical-v0:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --upgrade pip
+      - run: python -m pip install -e '.[test]'
+      - name: Run frozen canonical v0
+        run: python experiments/run_v0.py --out results/v0_handoff.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: eaton-v0-canonical
+          path: results/v0_handoff.json
+          if-no-files-found: error
+
   test:
     strategy:
       matrix:
