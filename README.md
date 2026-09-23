@@ -2,79 +2,35 @@
 
 > **Event-Addressed Transient Operator Networks**
 >
-> The machine does not run one persistent global algorithm. Sparse events temporarily instantiate operators in resident state; computation is the time-ordered handoff between those episodes.
+> EATON asks whether useful computation is sometimes better described as a succession of temporary local operators over resident state than as one persistent global algorithm.
 
-EATON asks whether **operator lifetime** can itself be a useful computational variable.
-
-The motivating abstraction is deliberately simple:
+The project started from a narrow operator-lifetime question and now asks a sharper black-box question: **can learned dynamics themselves be collapsed into reusable computation coordinates and a temporal grammar?**
 
 ```text
-rich resident state
-      ↑
-sparse event addresses a transient operator
-      ↓
-operator changes resident state / publishes a small event
-      ↓
-operator releases
-      ↓
-a different operator continues from the changed state
+state coordinate       = where the recurrent system is
+computation coordinate = how the local dynamics transform matched perturbations here
+temporal grammar       = event-conditioned transition law among recovered coordinates
 ```
 
-This repository is a synthetic mechanism laboratory, not a biological neuron model. The first gate does not claim that dendrites, neuromodulators, ephaptic fields, or transformers literally implement these equations.
+EATON is a synthetic mechanism laboratory. It is not a biological neuron model, and similarities to dendrites, neuromodulation, transformer paths, or sensorimotor loops are hypotheses/analogies unless a gate tests them directly.
 
 ## v0 — transient operator handoff
 
-The first frozen question is:
+V0 hand-authored two operators in one resident-state receiver and isolated one question: **when should an invoked operator stop being expressed?**
 
-> When two sequential jobs require different local operators, does transient release preserve downstream computation better than keeping the first operator tonically active, while still requiring resident state to survive the handoff?
-
-One receiver owns four resident coordinates:
+A context event activates acquisition operator `A`, which writes resident memory. A later payload is handled by operator `B`. Three matched arms differ only at the handoff:
 
 ```text
-x = [memory, decision_trace, payload_trace, output]
+transient   A handles context, releases, B consumes retained memory
+tonic       A stays eligible and rewrites memory when payload arrives
+reset       A releases, but resident memory is erased before B
 ```
-
-A context event first activates acquisition operator **A**:
-
-```text
-memory         <- tanh(0.40 * memory + event)
-decision_trace <- memory
-```
-
-After the early decision, a payload arrives. Transform operator **B** stores the payload and one tick later combines it with resident memory:
-
-```text
-payload_trace <- tanh(payload_event)
-output        <- tanh(2.00 * memory * payload_trace)
-```
-
-The target is the parity-like relation `context * payload`, so neither input alone is sufficient.
-
-Three matched arms receive exactly the same contexts, payloads, nuisance states, event noise, and event budget:
-
-```text
-transient   A handles context, releases, then B uses retained memory
-
-tonic       A handles context and stays eligible when payload arrives;
-            A therefore rewrites memory while B stores the payload
-
-reset       A handles context and releases, but resident memory is erased
-            before B receives the payload
-```
-
-The tonic and transient machines are identical through the first decision. They differ only in A's lifetime at the payload boundary. The reset arm asks whether successful handoff actually depends on resident state surviving between operator episodes.
-
-## Frozen v0 result
 
 Canonical receipt: [`results/v0_handoff.json`](results/v0_handoff.json)
-
-Classification:
 
 ```text
 PASS_TRANSIENT_HANDOFF
 ```
-
-The receipt was generated after the design, coefficients, nuisance distribution, seeds, episode budget, and pass thresholds were frozen. No result-dependent retuning was performed.
 
 Across **64 deterministic seeds × 256 episodes per seed**:
 
@@ -84,70 +40,117 @@ Across **64 deterministic seeds × 256 episodes per seed**:
 | median final accuracy | **1.0000** | 0.5000 | 0.5020 |
 | median context/memory correlation before B computes | **0.99894** | 0.17570 | 0.00777 |
 
-Paired seed results:
-
 ```text
 transient > tonic final accuracy: 64 / 64
 transient > reset final accuracy: 64 / 64
-
-median transient - tonic final margin: +0.500000
-median transient - reset final margin: +0.498047
 ```
 
-All matched-arm invariants passed. All trajectories were finite and bounded; the maximum absolute state coordinate across the canonical run was `0.9215206003`.
+### V0 claim boundary
 
-### What the result means
+V0 is a **constructed synthetic gating demonstration**. Its tonic failure is analytically implied by the chosen coefficients: leaving the acquisition writer active lets the payload overwrite the context needed downstream. That makes the harness useful, but it does **not** establish that phasic control is generally superior, that biology uses this schedule, or that operator lifetime is a newly discovered principle. Classical input-gating mechanisms already address the overwrite problem.
 
-In this deliberately constructed machine, the first operator is useful for acquiring context but harmful if it remains eligible for a later event whose role is different. Releasing A allows B to use the context that A left in resident state. Keeping A tonically active overwrites that context; erasing the context destroys the handoff for a different reason.
+## v1 — computation coordinates
 
-So v0 earns one narrow statement:
+V1 removes the hand-authored operator labels from the learner.
 
-> **In a matched synthetic resident-state machine, operator lifetime can be a load-bearing computational variable. A transient operator episode can hand state to a different computation more successfully than either tonic persistence or state reset.**
+A small tanh RNN is trained only to predict symbol sequences. In the structured world, one of three unobserved transition rules persists through time with rare switches. In the volatile control, the same rule mixture is resampled independently at every step. The network never receives the hidden rule label.
 
-This is an existence proof. The task was designed to contain exactly this interference structure, so the clean result is not evidence that transient control generally beats recurrent networks, transformers, state-space models, or ordinary gating.
-
-## Exact three-tick schedule
+After training, the recurrent network is frozen and treated as a black box. At each pre-input hidden state `h_t`, the same small bank of perturbations is applied:
 
 ```text
-t0  context event
-    A active
-    -> write resident memory
-    -> record early decision
-
-    handoff boundary
-
- t1 payload event
-    B stores payload_trace
-
-    transient: A released
-    tonic:     A still eligible and rewrites memory
-    reset:     A released; memory was reset at handoff
-
- t2 no external event
-    B computes from memory * payload_trace
-    -> final decision
+R_t[:, j] = (F(h_t + eps * v_j, s_t) - F(h_t, s_t)) / eps
 ```
 
-A and B write disjoint coordinates on `t1`, so the tonic result is invariant to whether the implementation evaluates A or B first.
+`R_t` is a local response signature: an empirical approximation to how the dynamics transform perturbations **here**. V1 clusters these response signatures rather than raw hidden activations.
 
-## Why this is separate from the ancestor repos
+The recovery path is deliberately restricted:
 
-EATON is not re-proving their earlier claims:
+- hidden world-rule labels are unavailable during discovery;
+- analytic Jacobians are unavailable during discovery;
+- RNN weights are not clustering features;
+- train/validation/test tapes are disjoint;
+- `k = 1..8` competes under a frozen validation MDL/BIC-like score;
+- test data are assigned only after `k` is selected.
 
-- [`SimpleNeuron`](https://github.com/anttiluode/SimpleNeuron) — rich state stays resident while tiny routed events travel; resident history changes a later cue.
+The matched activation attacker performs the same clustering/model-selection procedure on raw `h_t`. It is then judged on the same target as response coordinates: how well its clusters reconstruct **response signatures**. Other attackers use time bins, current input alone, time-shuffled response signatures, and a separately trained RNN on the volatile world.
+
+### Frozen v1 result
+
+Canonical receipt: [`results/v1_coordinates.json`](results/v1_coordinates.json)
+
+```text
+PASS_COMPUTATION_COORDINATES
+```
+
+All **8 / 8** structured seeds met the preregistered training-validity criterion. MDL-like selection chose `k=8` for response, activation, and shuffled-response coordinates on every valid seed.
+
+| measurement | frozen median/result |
+|---|---:|
+| response-coordinate response NRMSE | **0.445310** |
+| activation-coordinate response NRMSE | 0.675727 |
+| response / activation NRMSE ratio | **0.725984** |
+| response beats activation NRMSE | **8 / 8 seeds** |
+| response transition NLL | **0.311043** |
+| shuffled-response transition NLL | 2.007189 |
+| shuffled grammar gain | **1.697674 nats/transition** |
+| time-bin transition NLL | 0.408855 |
+| time-bin grammar gain | **0.098152 nats/transition** |
+| response coordinate beats both grammar attackers | **7 / 8 seeds** |
+| response-coordinate next-symbol accuracy | **0.900933** |
+| activation-coordinate next-symbol accuracy | 0.937826 |
+| current-symbol baseline gain of response coordinate | **+0.557726** |
+| structured-minus-volatile grammar specificity | **0.726521 nats/transition** |
+| finite-difference / analytic-Jacobian relative error | **1.809863e-06** |
+| post-hoc rule mutual information | 0.644891 nats |
+| post-hoc best rule agreement | 0.803711 |
+
+### What v1 earns
+
+V1 earns the narrow statement frozen in the design:
+
+> **A trained recurrent system can contain recurring, recoverable local response modes whose temporal organization provides a compact predictive description of its computation.**
+
+The strongest distinction is not simply that the hidden state contains task information. Clustering by **what the local dynamics do to matched perturbations** reconstructed held-out response behavior substantially better than clustering by **where the hidden activation is**, while the recovered coordinate sequence also carried temporal and next-symbol information beyond the preregistered attackers.
+
+The volatile control matters because it asks whether the grammar is just a property of the RNN/probing machinery. The structured-vs-volatile specificity remained strongly positive in the frozen panel.
+
+### What v1 does not establish
+
+`PASS_COMPUTATION_COORDINATES` does **not establish** that:
+
+- the recovered `k=8` alphabet is unique or is the network's one true algorithm;
+- every neural computation admits a small discrete grammar;
+- local Jacobian action fully defines computation;
+- the hidden three-rule world and the recovered eight coordinates should coincide one-to-one;
+- biological cortex literally uses discrete computation coordinates;
+- transformers have the same temporal grammar;
+- EATON has solved mechanistic interpretability.
+
+In particular, the activation-coordinate attacker retained slightly higher next-symbol accuracy than the response-coordinate readout. The result is therefore not “response coordinates dominate state representations.” The narrower finding is that response-space gives a substantially better compression of **local operator behavior**, while remaining temporally predictive.
+
+## Relation to Dong, Cordonnier & Loukas
+
+Dong et al. decompose self-attention networks depth-wise into paths through attention heads and show that skip connections create paths of varying effective length; in their tested tasks, short isolated paths carry much of the predictive power.
+
+EATON does not claim that their path decomposition proves a temporal-operator theory. The useful analogy is methodological:
+
+```text
+Dong:  decompose depth-wise computation into paths
+EATON: decompose time-wise learned dynamics into reusable response coordinates + transitions
+```
+
+An identity/skip route is also a reminder that preserving resident state can itself be computationally meaningful; EATON does not hard-code a `NULL` operator in v1.
+
+## Relation to the surrounding repos
+
+- [`SimpleNeuron`](https://github.com/anttiluode/SimpleNeuron) — resident history changes what a later small routed event means.
 - [`NSSN2`](https://github.com/anttiluode/NSSN2) — sparse recurrent receivers with state-conditioned local dynamics.
-- [`FrequencyAddressedNonlinearModalCell`](https://github.com/anttiluode/FrequencyAddressedNonlinearModalCell) — address a rich receiver and ask what reduced operator preserves its computation.
-- [`AnotherOddThing`](https://github.com/anttiluode/AnotherOddThing) — perturb resident operators and choose informative probes.
-- [`EvoX`](https://github.com/anttiluode/EvoX) / GAx — retain/select alternative procedures and temporary computational excursions.
-- [`AdaptiveObserverCache`](https://github.com/anttiluode/AdaptiveObserverCache) — persistent observer state redirects local reads in a real transformer cache.
+- [`FrequencyAddressedNonlinearModalCell`](https://github.com/anttiluode/FrequencyAddressedNonlinearModalCell) — addresses richer local computation through a small carrier coordinate.
+- [`AnotherOddThing`](https://github.com/anttiluode/AnotherOddThing) — asks which intervention best distinguishes hidden candidate operators.
+- [`EvoX`](https://github.com/anttiluode/EvoX) / GAx — slow anchor plus temporary computational excursions and residue.
+- [`AdaptiveObserverCache`](https://github.com/anttiluode/AdaptiveObserverCache) — tests persistent observer state and causal read control inside a frozen transformer cache.
 
-EATON v0 isolates what those did not: **when should an invoked operator stop being expressed?**
-
-## Relation to the AOC clue
-
-The 2026-09-23 first-ask AOC distance experiment motivated this gate. At +256 masked cache positions, observer steering still reversed the local `valve`/`sensor` decision-token preference, while the complete steered sentence did not win. One ordinary possibility is that continuing the intervention after the useful boundary damages follow-through.
-
-EATON v0 does not prove that explanation for Qwen. It gives the hypothesis a clean synthetic witness. A separate AOC test can later compare tonic steering against a phasic intervention that switches off after the decision boundary.
+EATON's current slot is the **temporal-description layer**: discover recurring local transformations, ask how long/when they are expressed, and determine whether their succession is a smaller causal description than the microscopic trajectory.
 
 ## Run
 
@@ -155,50 +158,49 @@ EATON v0 does not prove that explanation for Qwen. It gives the hypothesis a cle
 python -m pip install -e '.[test]'
 pytest -q
 python experiments/run_v0.py --out results/v0_handoff.json
+python experiments/run_v1.py --out results/v1_coordinates.json
 ```
 
-CI runs the test suite on Python 3.11 and 3.12. The committed receipt is regression-tested against a fresh canonical recomputation.
+CI runs the test suite on Python 3.11 and 3.12. Both canonical receipts are regression-tested against fresh recomputation.
 
 ## Repository map
 
 ```text
-src/eaton/core.py        exact resident state and three-tick operators
-src/eaton/world.py       deterministic balanced matched episode tapes
-src/eaton/experiment.py  metrics, invariants, aggregation, classification
-experiments/run_v0.py    canonical frozen runner
-results/v0_handoff.json  first frozen scientific receipt
-tests/                   mechanism + destructive + receipt regression tests
-docs/superpowers/specs/  approved frozen design
-docs/superpowers/plans/  implementation plan
+src/eaton/core.py            v0 resident-state handoff mechanism
+src/eaton/world.py           v0 matched episode tapes
+src/eaton/experiment.py      v0 metrics/classification
+
+src/eaton/grammar_world.py   v1 structured + volatile symbol worlds
+src/eaton/rnn.py             deterministic NumPy tanh RNN
+src/eaton/coordinates.py     response probes, clustering, reconstruction
+src/eaton/grammar.py         transition/readout/MDL metrics
+src/eaton/v1_experiment.py   attackers, aggregation, frozen classification
+
+experiments/run_v0.py        v0 canonical runner
+experiments/run_v1.py        v1 canonical runner
+results/v0_handoff.json      frozen v0 receipt
+results/v1_coordinates.json  frozen v1 receipt
+tests/                       mechanism, attacker, and receipt regressions
 ```
 
-## Claim boundary
+## Next gates
 
-The result is a **synthetic existence proof only**. It does not establish that:
-
-- biological dendrites switch operators this way;
-- neuromodulation or ephaptic coupling is the release mechanism;
-- phasic control is generally superior to tonic control;
-- transformers should always pulse attention interventions;
-- frequency is the correct address;
-- asynchronous overlap is useful;
-- the transient operator set is learned;
-- EATON outperforms conventional architectures.
-
-## Deferred gates
-
-The next questions remain deliberately unimplemented until v0 is frozen and reviewed:
+V1 turns “computations are coordinates” into an executable claim. The next gates are deliberately harder:
 
 ```text
-v1  asynchronous overlap / noncommutativity
-    can partially overlapping operator episodes compute something
-    a settle-then-step endpoint model cannot?
+v2  cross-implementation equivalence
+    train independent networks on the same task and ask whether different
+    weights collapse to comparable computation grammars
 
-v2  active-set address
-    can the currently active operator constellation itself become state,
-    changing what the same incoming event means?
+v3  overlap / noncommutativity
+    allow partially overlapping computational episodes and ask whether
+    timing itself carries irreducible computation
 
-v3  slow residue
-    can a slower anchor/residue change which transient operators can be
-    recruited, connecting EATON back to the GAx anchor + excursion idea?
+v4  slow anchor / GAx bridge
+    add a slower persistent state that changes which transient computation
+    coordinates can be recruited by the same event
+
+v5  transformer bridge
+    apply response-coordinate recovery to a frozen transformer intervention
+    trajectory rather than a toy recurrent network
 ```
